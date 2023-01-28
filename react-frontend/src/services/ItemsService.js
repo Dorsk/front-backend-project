@@ -24,5 +24,5 @@ class ItemsService {
         return axios.delete(ITEMS_API_BASE_URL + '/' + itemsId);
     }
 }
-
-export default new ItemsService()
+let items = new ItemsService();
+export default items;

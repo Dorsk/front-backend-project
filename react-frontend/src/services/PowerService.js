@@ -24,5 +24,5 @@ class PowerService {
         return axios.delete(PLAYER_API_BASE_URL + '/' + powerId);
     }
 }
-
-export default new PowerService()
+let power = new PowerService();
+export default power;

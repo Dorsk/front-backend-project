@@ -13,7 +13,7 @@ class FooterComponent extends Component {
         return (
             <div>
                 <footer className="footer">
-                    <span className="text-muted">Game</span>
+                    <span className="text-muted"> - </span>
                 </footer>
             </div>
         )
