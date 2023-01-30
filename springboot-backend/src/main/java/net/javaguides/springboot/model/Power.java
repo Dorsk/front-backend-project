@@ -41,7 +41,7 @@ public class Power {
 	}
 
 	public String getName() {
-		return description;
+		return name;
 	}
 
 	public void setName(String name) {
