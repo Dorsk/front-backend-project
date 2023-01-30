@@ -20,13 +20,14 @@ import CreatePowerComponent from './components/power/CreatePowerComponent';
 import UpdatePowerComponent from './components/power/UpdatePowerComponent';
 import ViewPowerComponent from './components/power/ViewPowerComponent';
 
+import OverviewFlowComponent from './components/flow/OverviewFlow';
 function App() {
   return (
     <div>
       <Router>
         <HeaderComponent />
         <div className="container">
-          <Switch>
+          <Switch >
             <Route path="/" exact component={ListPlayerComponent}></Route>
             <Route path="/players" component={ListPlayerComponent}></Route>
             <Route path="/items" component={ListItemsComponent}></Route>
@@ -43,11 +44,18 @@ function App() {
             <Route path="/add-power/:id" component={CreatePowerComponent}></Route>
             <Route path="/view-power/:id" component={ViewPowerComponent}></Route>
             <Route path="/update-items/:id" component={UpdatePowerComponent}></Route>
-          </Switch>
+
+
+          </Switch >
+          <div className="container" style={{ height: 800 }}>
+            <Switch>
+              <Route path='/flow' element={<OverviewFlowComponent />}></Route>
+            </Switch>
+          </div>
         </div>
         <FooterComponent />
-      </Router>
-    </div>
+      </Router >
+    </div >
 
   );
 }
