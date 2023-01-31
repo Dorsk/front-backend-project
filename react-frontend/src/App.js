@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
+import ReactFlow from 'reactflow';
+import 'reactflow/dist/style.css';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HeaderComponent from './components/HeaderComponent';
@@ -21,14 +23,16 @@ import UpdatePowerComponent from './components/power/UpdatePowerComponent';
 import ViewPowerComponent from './components/power/ViewPowerComponent';
 
 import OverviewFlowComponent from './components/flow/OverviewFlow';
+import HomeComponent from './components/home/HomeComponent';
+
 function App() {
   return (
     <div>
       <Router>
         <HeaderComponent />
         <div className="container">
-          <Switch >
-            <Route path="/" exact component={ListPlayerComponent}></Route>
+          <Switch>
+            <Route path="/" exact component={HomeComponent}></Route>
             <Route path="/players" component={ListPlayerComponent}></Route>
             <Route path="/items" component={ListItemsComponent}></Route>
 
@@ -45,13 +49,8 @@ function App() {
             <Route path="/view-power/:id" component={ViewPowerComponent}></Route>
             <Route path="/update-items/:id" component={UpdatePowerComponent}></Route>
 
-
-          </Switch >
-          <div className="container" style={{ height: 800 }}>
-            <Switch>
-              <Route path='/flow' element={<OverviewFlowComponent />}></Route>
-            </Switch>
-          </div>
+            <Route path='/Flow' element={<OverviewFlowComponent />}></Route>
+          </Switch>
         </div>
         <FooterComponent />
       </Router >

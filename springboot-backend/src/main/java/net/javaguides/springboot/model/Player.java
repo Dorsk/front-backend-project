@@ -28,16 +28,20 @@ public class Player {
 	@Column(name = "pseudo")
 	private String pseudo;
 
+	@Column(name = "password")
+	private String password;
+
 	public Player() {
 
 	}
 
-	public Player(String firstName, String lastName, String emailId, String pseudo) {
+	public Player(String firstName, String lastName, String emailId, String pseudo, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
 		this.pseudo = pseudo;
+		this.password = password;
 	}
 
 	public long getId() {
@@ -78,5 +82,13 @@ public class Player {
 
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

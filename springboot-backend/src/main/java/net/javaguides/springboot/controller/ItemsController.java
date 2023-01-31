@@ -64,6 +64,7 @@ public class ItemsController {
 		items.setAgility(itemsDetails.getAgility());
 		items.setArmorDefence(itemsDetails.getArmorDefence());
 		items.setMagicDefence(itemsDetails.getMagicDefence());
+		items.setEmplacement(itemsDetails.getEmplacement());
 
 		Items updatedItems = itemsRepository.save(items);
 		return ResponseEntity.ok(updatedItems);

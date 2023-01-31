@@ -11,8 +11,8 @@ class FooterComponent extends Component {
 
     render() {
         return (
-            <div>
-                <footer className="footer">
+            <div className="fixed-bottom">
+                <footer className="footer" >
                     <span className="text-muted">Game</span>
                 </footer>
             </div>

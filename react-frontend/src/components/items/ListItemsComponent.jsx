@@ -49,6 +49,7 @@ class ListItemsComponent extends Component {
                         <thead>
                             <tr>
                                 <th> Name</th>
+                                <th> Emplacement</th>
                                 <th> langue</th>
                                 <th> Description</th>
                                 <th> Gold</th>
@@ -65,6 +66,7 @@ class ListItemsComponent extends Component {
                                     items =>
                                         <tr key={items.id}>
                                             <td> {items.name} </td>
+                                            <td> {items.emplacement} </td>
                                             <td> {items.langue}</td>
                                             <td> {items.description}</td>
                                             <td> {items.gold}</td>
