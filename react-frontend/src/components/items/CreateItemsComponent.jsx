@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Combobox from "react-widgets/Combobox";
 import ItemsService from '../../services/ItemsService';
 
 class CreateItemsComponent extends Component {
@@ -17,8 +16,7 @@ class CreateItemsComponent extends Component {
             force: '',
             agility: '',
             armorDefence: '',
-            magicDefence: '',
-            emplacement: ''
+            magicDefence: ''
         }
         this.changeNameHandler = this.changeNameHandler.bind(this);
         this.changeLangueHandler = this.changeLangueHandler.bind(this);
@@ -29,7 +27,6 @@ class CreateItemsComponent extends Component {
         this.changeAgiHandler = this.changeAgiHandler.bind(this);
         this.changeArmorDefenceHandler = this.changeArmorDefenceHandler.bind(this);
         this.changeArmorMagicHandler = this.changeArmorMagicHandler.bind(this);
-        this.changeEmplacementHandler = this.changeEmplacementHandler.bind(this);
         this.saveOrUpdateItems = this.saveOrUpdateItems.bind(this);
     }
 
@@ -51,8 +48,7 @@ class CreateItemsComponent extends Component {
                     force: Items.force,
                     agility: Items.agility,
                     armorDefence: Items.armorDefence,
-                    magicDefence: Items.magicDefence,
-                    emplacement: Items.emplacement
+                    magicDefence: Items.magicDefence
                 });
             });
         }
@@ -61,8 +57,7 @@ class CreateItemsComponent extends Component {
         e.preventDefault();
         let Items = {
             name: this.state.name, langue: this.state.langue, description: this.state.description, gold: this.state.gold,
-            intelligence: this.state.intelligence, force: this.state.force, agility: this.state.agility, armorDefence: this.state.armorDefence,
-            magicDefence: this.state.magicDefence, emplacement: this.state.emplacement
+            intelligence: this.state.intelligence, force: this.state.force, agility: this.state.agility, armorDefence: this.state.armorDefence, magicDefence: this.state.magicDefence
         };
         console.log('Items => ' + JSON.stringify(Items));
 
@@ -113,11 +108,6 @@ class CreateItemsComponent extends Component {
     changeArmorMagicHandler = (event) => {
         this.setState({ magicDefence: event.target.value });
     }
-
-    changeEmplacementHandler = (event) => {
-        this.setState({ emplacement: event.target.value });
-    }
-
     cancel() {
         this.props.history.push('/Items');
     }
@@ -176,10 +166,6 @@ class CreateItemsComponent extends Component {
                                     <div className="form-group">
                                         <input placeholder="Armure magique" name="magicDefence" className="form-control"
                                             value={this.state.magicDefence} onChange={this.changeArmorMagicHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <input placeholder="Emplacement" name="emplacement" className="form-control"
-                                            value={this.state.emplacement} onChange={this.changeEmplacementHandler} />
                                     </div>
 
                                     <button className="btn btn-success" onClick={this.saveOrUpdateItems}>Save</button>

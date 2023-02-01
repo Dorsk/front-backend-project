@@ -10,14 +10,12 @@ class UpdatePlayerComponent extends Component {
             firstName: '',
             lastName: '',
             emailId: '',
-            pseudo: '',
-            password: ''
+            pseudo: ''
         }
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
         this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
         this.changeEmailHandler = this.changeEmailHandler.bind(this);
         this.changePseudoHandler = this.changePseudoHandler.bind(this);
-        this.changePasswordHandler = this.changePasswordHandler.bind(this);
         this.updatePlayer = this.updatePlayer.bind(this);
     }
 
@@ -29,8 +27,7 @@ class UpdatePlayerComponent extends Component {
                 firstName: Player.firstName,
                 lastName: Player.lastName,
                 emailId: Player.emailId,
-                pseudo: Player.pseudo,
-                password: Player.password
+                pseudo: Player.pseudo
             });
         });
     }
@@ -59,10 +56,6 @@ class UpdatePlayerComponent extends Component {
 
     changePseudoHandler = (event) => {
         this.setState({ pseudo: event.target.value });
-    }
-
-    changePasswordHandler = (event) => {
-        this.setState({ password: event.target.value });
     }
 
     cancel() {
@@ -98,11 +91,6 @@ class UpdatePlayerComponent extends Component {
                                         <label> Pseudo: </label>
                                         <input placeholder="Pseudo" name="pseudo" className="form-control"
                                             value={this.state.pseudo} onChange={this.changePseudoHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <label> Pseudo: </label>
-                                        <input placeholder="Password" name="password" className="form-control"
-                                            value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
 
                                     <button className="btn btn-success" onClick={this.updatePlayer}>Save</button>

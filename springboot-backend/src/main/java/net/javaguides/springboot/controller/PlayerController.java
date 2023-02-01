@@ -59,7 +59,6 @@ public class PlayerController {
 		player.setLastName(playerDetails.getLastName());
 		player.setEmailId(playerDetails.getEmailId());
 		player.setPseudo(playerDetails.getPseudo());
-		player.setPassword(playerDetails.getPassword());
 		Player updatedPlayer = playerRepository.save(player);
 		return ResponseEntity.ok(updatedPlayer);
 	}

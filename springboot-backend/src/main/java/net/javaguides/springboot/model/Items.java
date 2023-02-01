@@ -43,15 +43,12 @@ public class Items {
 	@Column(name = "magicdefence")
 	private String magicdefence;
 
-	@Column(name = "emplacement")
-	private String emplacement;
-
 	public Items() {
 
 	}
 
 	public Items(String name, String langue, String description, String gold, String intelligence,
-			String strenght, String agility, String armordefence, String magicdefence, String emplacement) {
+			String strenght, String agility, String armordefence, String magicdefence) {
 		super();
 		this.name = name;
 		this.langue = langue;
@@ -62,7 +59,6 @@ public class Items {
 		this.agility = agility;
 		this.armordefence = armordefence;
 		this.magicdefence = magicdefence;
-		this.emplacement = emplacement;
 	}
 
 	public Long getId() {
@@ -143,14 +139,6 @@ public class Items {
 
 	public void setMagicDefence(String magicdefence) {
 		this.magicdefence = magicdefence;
-	}
-
-	public String getEmplacement() {
-		return emplacement;
-	}
-
-	public void setEmplacement(String emplacement) {
-		this.emplacement = emplacement;
 	}
 
 }

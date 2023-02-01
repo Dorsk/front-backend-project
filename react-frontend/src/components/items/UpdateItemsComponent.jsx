@@ -15,8 +15,7 @@ class UpdateItemsComponent extends Component {
             force: '',
             agility: '',
             armorDefence: '',
-            magicDefence: '',
-            emplacement: ''
+            magicDefence: ''
         }
         this.changeNameHandler = this.changeNameHandler.bind(this);
         this.changeLangueHandler = this.changeLangueHandler.bind(this);
@@ -27,7 +26,6 @@ class UpdateItemsComponent extends Component {
         this.changeAgilityHandler = this.changeAgilityHandler.bind(this);
         this.changeArmorDefenceHandler = this.changeArmorDefenceHandler.bind(this);
         this.changeMagicDefenceHandler = this.changeMagicDefenceHandler.bind(this);
-        this.changeEmplacementHandler = this.changeEmplacementHandler.bind(this);
         this.updateItems = this.updateItems.bind(this);
     }
 
@@ -44,8 +42,7 @@ class UpdateItemsComponent extends Component {
                 force: Items.force,
                 agility: Items.agility,
                 armorDefence: Items.armorDefence,
-                magicDefence: Items.magicDefence,
-                emplacement: Items.emplacement
+                magicDefence: Items.magicDefence
             });
         });
     }
@@ -54,8 +51,7 @@ class UpdateItemsComponent extends Component {
         e.preventDefault();
         let Items = {
             id: this.state.id, name: this.state.name, langue: this.state.langue, description: this.state.description, gold: this.state.gold,
-            intelligence: this.state.intelligence, force: this.state.force, agility: this.state.agility, armorDefence: this.state.armorDefence, magicDefence: this.state.magicDefence,
-            emplacement: this.state.emplacement
+            intelligence: this.state.intelligence, force: this.state.force, agility: this.state.agility, armorDefence: this.state.armorDefence, magicDefence: this.state.magicDefence
         };
         console.log('Items => ' + JSON.stringify(Items));
         console.log('id => ' + JSON.stringify(this.state.id));
@@ -66,10 +62,6 @@ class UpdateItemsComponent extends Component {
 
     changeNameHandler = (event) => {
         this.setState({ name: event.target.value });
-    }
-
-    changeEmplacementHandler = (event) => {
-        this.setState({ emplacement: event.target.value });
     }
 
     changeLangueHandler = (event) => {
@@ -121,10 +113,6 @@ class UpdateItemsComponent extends Component {
                                     <div className="form-group">
                                         <input placeholder="Name" name="name" className="form-control"
                                             value={this.state.name} onChange={this.changeNameHandler} />
-                                    </div>
-                                    <div className="form-group">
-                                        <input placeholder="Emplacement" name="emplacement" className="form-control"
-                                            value={this.state.emplacement} onChange={this.changeEmplacementHandler} />
                                     </div>
                                     <div className="form-group">
                                         <input placeholder="Langue" name="langue" className="form-control"
