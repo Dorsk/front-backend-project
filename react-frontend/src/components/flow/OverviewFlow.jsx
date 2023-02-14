@@ -11,6 +11,7 @@ import './overflow.css';
 import Sidebar from './Sidebar';
 import ZoomNode from './ZoomNode.js';
 
+
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 const snapGrid = [20, 20];
@@ -52,7 +53,8 @@ const OverviewFlowComponent = () => {
                 id: getId(),
                 type,
                 position,
-                data: { label: `${type} node` },
+                data: { label: `${type}` },
+                shape: type
             };
 
             setNodes((nds) => nds.concat(newNode));
@@ -61,9 +63,9 @@ const OverviewFlowComponent = () => {
     );
 
     return (
-        <div className="overviewflowcomponent">
+        <div className="overviewflowcomponent container">
             <ReactFlowProvider>
-                <div class="row">
+                <div class="row ">
                     <Sidebar />
                     <div className="reactflow-wrapper" ref={reactFlowWrapper}>
                         <ReactFlow
