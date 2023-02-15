@@ -20,16 +20,20 @@ import CreatePowerComponent from './components/power/CreatePowerComponent';
 import UpdatePowerComponent from './components/power/UpdatePowerComponent';
 import ViewPowerComponent from './components/power/ViewPowerComponent';
 
+import OverviewFlowComponent from './components/flow/OverviewFlow';
 function App() {
   return (
     <div>
       <Router>
         <HeaderComponent />
-        <div className="container">
+        <div >
           <Switch>
             <Route path="/" exact component={ListPlayerComponent}></Route>
             <Route path="/players" component={ListPlayerComponent}></Route>
             <Route path="/items" component={ListItemsComponent}></Route>
+            <Route path="/powers" component={ListPowerComponent}></Route>
+            <Route path='/flow' component={OverviewFlowComponent}></Route>
+
 
             <Route path="/add-player/:id" component={CreatePlayerComponent}></Route>
             <Route path="/view-player/:id" component={ViewPlayerComponent}></Route>
@@ -39,15 +43,18 @@ function App() {
             <Route path="/view-items/:id" component={ViewItemsComponent}></Route>
             <Route path="/update-items/:id" component={UpdateItemsComponent}></Route>
 
-            <Route path="/powers" component={ListPowerComponent}></Route>
+
             <Route path="/add-power/:id" component={CreatePowerComponent}></Route>
             <Route path="/view-power/:id" component={ViewPowerComponent}></Route>
             <Route path="/update-items/:id" component={UpdatePowerComponent}></Route>
+
+
+
           </Switch>
         </div>
         <FooterComponent />
       </Router>
-    </div>
+    </div >
 
   );
 }

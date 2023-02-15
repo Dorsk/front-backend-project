@@ -24,5 +24,5 @@ class PlayerService {
         return axios.delete(PLAYER_API_BASE_URL + '/' + playerId);
     }
 }
-
-export default new PlayerService()
+let player = new PlayerService();
+export default player;
