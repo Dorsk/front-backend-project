@@ -10,13 +10,18 @@ import 'reactflow/dist/style.css';
 import './overflow.css';
 import Sidebar from './Sidebar';
 import ZoomNode from './ZoomNode.js';
-
+import Triangle from './nodes/TriangleNode';
+import Parallelogram from './nodes/ParallelogramNode';
+import TextUpdaterNode from './nodes/TextUpdaterNode';
 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
 const snapGrid = [20, 20];
 const nodeTypes = {
     zoom: ZoomNode,
+    "TextUpdater": TextUpdaterNode,
+    "Parallelogram": Parallelogram,
+    "Triangle": Triangle,
 };
 const initialNodes = [];
 
@@ -39,15 +44,11 @@ const OverviewFlowComponent = () => {
 
             const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
             const type = event.dataTransfer.getData('application/reactflow');
-            let classNom;
+            let classNom = type;
             // check if the dropped element is valid
             if (typeof type === 'undefined' || !type) {
                 return;
             }
-            else if (typeof type != 'undefined') {
-                classNom = type;
-            }
-
 
             const position = reactFlowInstance.project({
                 x: event.clientX - reactFlowBounds.left,
@@ -57,10 +58,9 @@ const OverviewFlowComponent = () => {
                 id: getId(),
                 type,
                 position,
-                data: { label: `${type}` },
-                className: classNom
+                className: type,
+                data: { className: `${classNom}`, label: `${type}` },
             };
-
             setNodes((nds) => nds.concat(newNode));
         },
         [reactFlowInstance]
@@ -75,6 +75,7 @@ const OverviewFlowComponent = () => {
                         <ReactFlow
                             nodes={nodes}
                             edges={edges}
+                            nodeTypes={nodeTypes}
                             onNodesChange={onNodesChange}
                             onEdgesChange={onEdgesChange}
                             onConnect={onConnect}
