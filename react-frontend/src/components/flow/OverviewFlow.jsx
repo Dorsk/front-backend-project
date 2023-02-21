@@ -39,11 +39,15 @@ const OverviewFlowComponent = () => {
 
             const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
             const type = event.dataTransfer.getData('application/reactflow');
-
+            let classNom;
             // check if the dropped element is valid
             if (typeof type === 'undefined' || !type) {
                 return;
             }
+            else if (typeof type != 'undefined') {
+                classNom = type;
+            }
+
 
             const position = reactFlowInstance.project({
                 x: event.clientX - reactFlowBounds.left,
@@ -54,7 +58,7 @@ const OverviewFlowComponent = () => {
                 type,
                 position,
                 data: { label: `${type}` },
-                shape: type
+                className: classNom
             };
 
             setNodes((nds) => nds.concat(newNode));
