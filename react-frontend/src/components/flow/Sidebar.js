@@ -2,6 +2,7 @@ import React from 'react';
 import DownloadButton from './DownloadButton.jsx';
 import losange from './nodes/losange.png'
 import text from './nodes/text.png'
+import database from './nodes/database.png'
 
 const SideBar = () => {
     const onDragStart = (event, nodeType) => {
@@ -19,7 +20,8 @@ const SideBar = () => {
                 </div>
                 <div className="dndnode output" onDragStart={(event) => onDragStart(event, 'stop')} draggable>
                 </div>
-                <div className="dndnode database" onDragStart={(event) => onDragStart(event, 'database')} draggable>
+                <div className="dndnode " onDragStart={(event) => onDragStart(event, 'database')} draggable>
+                    <img className="database" src={database} alt="Database" width="40" height="40" />
                 </div>
                 <div className="dndnode" onDragStart={(event) => onDragStart(event, 'diamond')} draggable>
                     <img className="question" src={losange} alt="Question" width="55" height="55" />

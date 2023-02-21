@@ -28,11 +28,13 @@ function App() {
         <HeaderComponent />
         <div >
           <Switch>
-            <Route path="/" exact component={ListPlayerComponent}></Route>
+            <Route path="/" exact component={OverviewFlowComponent}></Route>
+            <Route path='/flow' component={OverviewFlowComponent}></Route>
+            {/*
             <Route path="/players" component={ListPlayerComponent}></Route>
             <Route path="/items" component={ListItemsComponent}></Route>
             <Route path="/powers" component={ListPowerComponent}></Route>
-            <Route path='/flow' component={OverviewFlowComponent}></Route>
+            
 
 
             <Route path="/add-player/:id" component={CreatePlayerComponent}></Route>
@@ -46,7 +48,7 @@ function App() {
 
             <Route path="/add-power/:id" component={CreatePowerComponent}></Route>
             <Route path="/view-power/:id" component={ViewPowerComponent}></Route>
-            <Route path="/update-items/:id" component={UpdatePowerComponent}></Route>
+  <Route path="/update-items/:id" component={UpdatePowerComponent}></Route> */}
 
 
 
